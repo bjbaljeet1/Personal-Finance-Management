@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Admin_user_views</title>
+</head>
+
+{% extends 'Admin/Adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/Admin_expert_views_post/">
+
+{% csrf_token %}
+<table width="200" border="1">
+  <tr>
+    <td><input type="text" name="textfield" class="form-control" required/></td>
+    <td><input name="Search" type="submit" id="Search" value="Search" class="btn btn-success"/>
+    </td>
+  </tr>
+</table>
+<table class="table table-bordered">
+  <tr style="background-color: #b38255">
+    <td width="34" style="color: white">Sl.No</td>
+    <td width="63" style="color: white">Name</td>
+    <td width="81" style="color: white">Qulification</td>
+    <td width="89" style="color: white">Experience</td>
+    <td width="116" style="color: white">Gender</td>
+    <td width="91" style="color: white">Phone</td>
+    <td width="114" style="color: white">Email</td>
+    <td width="110" style="color: white">Place</td>
+    <td width="100" style="color: white">Photo</td>
+    <td width="100" style="color: white">Proof</td>
+    <td width="110" style="color: white">Action</td>
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.Expertname }}</td>
+    <td>&nbsp;{{ i.Qualification }}</td>
+    <td>&nbsp;{{ i.Experience}}</td>
+    <td>&nbsp;{{ i.Gender}}</td>
+    <td>&nbsp;{{ i.Phone}}</td>
+    <td>&nbsp;{{ i.Email}}</td>
+    <td>&nbsp;{{ i.Place}}</td>
+    <td>
+        <img src="{{ i.Photo }}" height="100" width="100">
+    </td>
+    <td>
+        <a href="{{ i.Proof }}" class="btn btn-info">View Document</a>
+    </td>
+    <td><a href="/myapp/Approve_expert/{{ i.LOGIN.id }}" class="btn btn-success">Approve</a>
+        <a href="/myapp/Reject_expert/{{ i.LOGIN.id }}" class="btn btn-danger">Reject</a> </td>
+
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}
+</html>

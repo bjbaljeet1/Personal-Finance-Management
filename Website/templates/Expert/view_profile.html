@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'Expert/Expertindex.html' %}
+{% block body %}
+<form>
+    <table class="table table-bordered">
+        <tr>
+            <td></td>
+            <td><img src="{{ data.Photo }}" height="100" width="170"> </td>
+        </tr>
+
+        <tr>
+            <td>Name :</td>
+            <td>{{ data.Expertname }}</td>
+        </tr>
+
+        <tr>
+            <td>Qualification :</td>
+            <td>{{ data.Qualification }}</td>
+        </tr>
+
+        <tr>
+            <td>Experience :</td>
+            <td>{{ data.Experience }}</td>
+        </tr>
+        <tr>
+            <td>Gender :</td>
+            <td>{{ data.Gender }}</td>
+        </tr> <tr>
+            <td>Phone :</td>
+            <td>{{ data.Phone}}</td>
+        </tr>
+        <tr>
+            <td>Email :</td>
+            <td>{{ data.Email }}</td>
+        </tr>
+        <tr>
+            <td>Place :</td>
+            <td>{{ data.Place }}</td>
+        </tr>
+        <tr>
+            <td>Status :</td>
+            <td>{{ data.Status }}</td>
+        </tr>
+
+        <tr>
+            <td>Proof :</td>
+            <td><a href="{{ data.Proof }}">Proof view</a></td>
+        </tr>
+
+<tr>
+    <td></td>
+    <td><a href="/myapp/Expert_Edit_profile_get/">Edit profile</a> </td>
+</tr>
+    </table>
+</form>
+</body>
+{% endblock %}
+</html>

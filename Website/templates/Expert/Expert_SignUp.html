@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Expert Sign Up</title>
+</head>
+<body>
+{% extends 'Expert/Expertindex.html' %}
+{% block body %}
+<form action="/myapp/expert_signup_post/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<table width="451" border="1">
+  <tr>
+    <td width="181">Name</td>
+    <td width="254"><input name="name" type="text"></td>
+  </tr>
+  <tr>
+    <td>Qualification</td>
+    <td><input name="qualification" type="text"></td>
+  </tr>
+  <tr>
+    <td>Photo</td>
+    <td><input name="photo" type="file"></td>
+  </tr>
+
+  <tr>
+    <td>Proof</td>
+    <td><input name="proof" type="file"></td>
+  </tr>
+  <tr>
+    <td>Experience</td>
+    <td><input name="experience" type="text"></td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><input name="gender" type="radio" value="Male">Male<br>
+        <input name="gender" type="radio" value="Female">Female<br>
+        <input name="gender" type="radio" value="other">Other</td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td><input name="phone" type="text"></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><input name="email" type="text"></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td><input name="place" type="text"></td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td><input name="password" type="password"></td>
+  </tr>
+  <tr>
+    <td>Confirm Password</td>
+    <td><input name="confirmpassword" type="password"></td>
+  </tr>
+    <tr>
+        <td>Photo </td>
+        <td><input type="file" name="photo"> </td>
+    </tr>
+    <tr><input type="file" name="proof"></tr>
+  <tr>
+    <td colspan="2" align="center"><input name="" type="submit"></td>
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}
+</html>

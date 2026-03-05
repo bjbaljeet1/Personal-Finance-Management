@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Expert Sign Up</title>
+</head>
+{% extends 'Expert/Expertindex.html' %}
+{% block body %}
+<body>
+<form action="/myapp/Expert_Edit_profile_post/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-bordered">
+  <tr>
+    <td width="181">Name</td>
+    <td width="254"><input name="name" type="text" value="{{ data.Expertname }}"></td>
+  </tr>
+  <tr>
+    <td>Qualification</td>
+    <td><input name="qualification" type="text" value="{{ data.Qualification}}"></td>
+  </tr>
+  <tr>
+    <td>Photo</td>
+    <td>
+        <img src="{{ data.Photo }}" height="100" width="170">
+        <input name="photo" type="file"></td>
+  </tr>
+
+  <tr>
+    <td>Proof</td>
+    <td>
+        <a href="{{ data.Proof }}">Proof view</a>
+        <input name="proof" type="file"></td>
+  </tr>
+  <tr>
+    <td>Experience</td>
+    <td><input name="experience" type="text" value="{{ data.Experience }}"></td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><input name="gender" type="radio" value="Male" {% if data.Gender == 'Male' %}checked{% endif %}>Male<br>
+        <input name="gender" type="radio" value="Female" {% if data.Gender == 'Female' %}checked{% endif %}>Female<br>
+        <input name="gender" type="radio" value="other" {% if data.Gender == 'Other' %}checked{% endif %}>Other
+    </td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td><input name="phone" type="text" value="{{ data.Phone }}"></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><input name="email" type="text" value="{{ data.Email }}"></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td><input name="place" type="text" value="{{ data.Place }}"></td>
+  </tr>
+
+  <tr>
+    <td colspan="2" align="center"><input type="submit" value="Edit"></td>
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% extends 'Admin/Adminindex.html' %}
+{% block body %}
+<body>
+<p>&nbsp;</p>
+<form id="form1" name="form1" method="post" action="/myapp/edit_expert_post/">
+  {% csrf_token %}
+    <input type="hidden" name="id" value="{{ data.id }}">
+    <table width="200" border="1">
+    <tr>
+      <td>Name</td>
+      <td>
+        <input type="text" name="textfield" id="textfield" value="{{ data.Expertname }}"/></td>
+    </tr>
+    <tr>
+      <td>Qulification</td>
+      <td>
+        <input type="text" name="textfield2" id="textfield2" value="{{ data.Qualification }}" /></td>
+    </tr>
+    <tr>
+      <td>Experience</td>
+      <td>
+        <input type="text" name="textfield3" id="textfield3" value="{{ data.Experience }}" />
+        </td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+        <input type="text" name="textfield4" id="textfield4" value="{{ data.Gender}}" /></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td>
+        <input type="text" name="textfield5" id="textfield5" value="{{ data.Phone }}" /></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>
+        <input type="text" name="textfield6" id="textfield6" value="{{ data.Email }}" /></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td>
+        <input type="text" name="textfield7" id="textfield7" value="{{ data.Place }}" /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" d="button" value="Change" /></td>
+    </tr>
+  </table>
+</form>
+
+</body>
+{% endblock %}
+</html>
