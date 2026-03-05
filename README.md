@@ -15,19 +15,14 @@ The **Personal Finance Dashboard** is a smart financial management system that h
 Personal-Finance/ │── website/ # Web frontend (HTML, CSS, JS) │── app/ # Mobile app (Flutter) │── backend/ # Django API │── database/ # PostgreSQL schema & migrations │── README.md # Documentation │── requirements.txt # Python dependencies │── LICENSE # License file
 
 ## 🔧 Installation & Setup  
-### **1️⃣ Clone the Repository**  
-```sh 
-git clone https://github.com/ShaunPeter04/Personal-Finance.git
-cd Personal-Finance
-```
-2️⃣ Backend Setup (Django)
+1️⃣ Backend Setup (Django)
 ```sh
 cd backend
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
-3️⃣ Frontend Setup (Website)
+2️⃣ Frontend Setup (Website)
 Open and type localhost/ /filename/ file in a browser or use a local web server.
 
 📌 Tech Stack
