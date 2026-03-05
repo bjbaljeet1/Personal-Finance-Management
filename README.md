@@ -36,7 +36,7 @@ Backend: Python (Django)
 Database: MySQL
 
 🎯 Contributors
-👤 Shaun Peter Antony
-👤 Adwaith P Jayan
 👤 Baljeet
+👤 Adwaith P Jayan
+👤 Shaun Peter Antony
 👤 Jain S Babu
